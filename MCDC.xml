@@ -1,0 +1,114 @@
+<modelo.TodasMCDC>
+  <classes class="vector">
+    <modelo.Classe>
+      <nomeClasse>Teste2</nomeClasse>
+      <metodos class="vector">
+        <modelo.Metodo>
+          <metodo>Teste2.funcao</metodo>
+          <decisoes class="vector">
+            <decision>
+              <decisaoEsquerda>
+                <codigo>a &gt; 0</codigo>
+                <condicao>
+                  <argumentoEsquerda>a</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>MAIOR</operador>
+                  <codigo>a &gt; 0</codigo>
+                  <valor>true</valor>
+                </condicao>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> b == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> b</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> b == 0</codigo>
+                  <valor>true</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              <valor>true</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <codigo>a &gt; 0</codigo>
+                <condicao>
+                  <argumentoEsquerda>a</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>MAIOR</operador>
+                  <codigo>a &gt; 0</codigo>
+                  <valor>true</valor>
+                </condicao>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> b == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> b</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> b == 0</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              <valor>false</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <codigo>a &gt; 0</codigo>
+                <condicao>
+                  <argumentoEsquerda>a</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>MAIOR</operador>
+                  <codigo>a &gt; 0</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> b == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> b</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> b == 0</codigo>
+                  <valor>true</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              <valor>false</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <codigo>a &gt; 0</codigo>
+                <condicao>
+                  <argumentoEsquerda>a</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>MAIOR</operador>
+                  <codigo>a &gt; 0</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> b == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> b</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> b == 0</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              <valor>false</valor>
+            </decision>
+          </decisoes>
+        </modelo.Metodo>
+      </metodos>
+    </modelo.Classe>
+  </classes>
+</modelo.TodasMCDC>

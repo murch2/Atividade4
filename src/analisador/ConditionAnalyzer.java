@@ -14,6 +14,7 @@ import modelo.DecisaoAux;
 import modelo.Metodo;
 import modelo.TodasCondicoes;
 import modelo.TodasDecisoes;
+import modelo.TodasMCDC;
 import recoder.java.ProgramElement;
 import recoder.abstraction.Method;
 import recoder.convenience.TreeWalker;
@@ -101,7 +102,8 @@ public class ConditionAnalyzer  {
 				mcdcdecisions_temp.add(decision2);  
 	        }
 //			testCasesCopy tem a tabela verdade nesse ponto
-	        this.eliminaTestesAmbuiguos(testCasesCopy, result); 
+	        //Tirando só pra testar (Antonio vai fazer essa parte)
+//	        this.eliminaTestesAmbuiguos(testCasesCopy, result); 
 	        
 		} 
 		return mcdcdecisions_temp;
@@ -320,63 +322,57 @@ public class ConditionAnalyzer  {
 		XML.criaXML(tc, XML.Tipo.TODASCONDICOES);
 	}
 
-	public void getAllMCDC(String xmlFileName, Method method) {
+	
+//	Mudando como ele faz isso. 
+	
+	public void getAllMCDC(List<Method> todosMetodos) {
 		
-		Vector<ProgramElement> decisions = this.getTodasDecisoesDoMetodo(method);
+		TodasMCDC todasmcdc = new TodasMCDC(); 
 		
-		//AllMCDC aMcdc = new AllMCDC();
-		
-		TodasDecisoes ad = new TodasDecisoes();
-		
-		List<Decisao> allMCDCRequirements = new Vector<Decisao>();
-		
-		// for each expression found
-		for (ProgramElement element : decisions) {
-			
-			// the whole expression is the main decision
-			Decisao mainDecision = new Decisao();
-			
-			TreeWalker treeWalker = new TreeWalker(element);
-			
-			try {
-				treeWalker.next();
-				EncontraDecisãoCompleta.encontraDesicaoCompletaR(treeWalker, mainDecision);
+		String nomeClasse = ""; 
+		String nomeClasseAnterior = ""; 
+		List<Condicao> condicoes = new Vector<Condicao>();
+		Classe cls = new Classe();
+
+		for (Method metodo : todosMetodos) {
+
+			nomeClasse = metodo.getContainer().toString(); 
+			nomeClasse = nomeClasse.substring(nomeClasse.lastIndexOf(" ") + 1); 
+
+			if (!nomeClasse.equals(nomeClasseAnterior)) {
+				nomeClasseAnterior = nomeClasse.toString(); 
+				cls = new Classe();
+				cls.setNomeClasse(nomeClasse);
+				todasmcdc.addClasses(cls);
 			}
+
+			Metodo m = new Metodo(); 
+			m.setMetodo(metodo.getFullName().toString());
+
+			Vector<ProgramElement> decisoes = this.getTodasDecisoesDoMetodo(metodo);
+			//Acho muito que aqui tem que ser decisões auxiliares
+			List<Decisao> todasDecisoes = this.encontraDecisoes(decisoes);
+//			List<DecisaoAux> decisoesAuxiliares = new Vector<DecisaoAux>();
 			
-			catch (Exception ex) {
-				System.err.println("Error while mapping: " + ex.toString());
-			}
+			//Aqui que tem que mudar, o que ele faz pra cada decisao. 
+//			for (Decisao decisao : todasDecisoes) {
+//				DecisaoAux d = new DecisaoAux(); 
+//				d.setCodigo(decisao.getCodigo());
+//				getCondicoesDasDecisoes(decisao, condicoes);
+//				condicoes = getRequisitosTodasCondicoes(condicoes);
+//				d.setCondicoes(condicoes);
+////				decisoesAuxiliares.add(d); 
+//				condicoes = new Vector<Condicao>();
+//			}
 			
-			allMCDCRequirements.add(mainDecision);
+			todasDecisoes = getMCDCRequirements(todasDecisoes); 
+			m.setDecisoes(todasDecisoes);
+			
+//			m.setDecisoesAuxiliares(decisoesAuxiliares);
+			cls.addMetodo(m);
 		}
 		
-		
-		allMCDCRequirements = getMCDCRequirements(allMCDCRequirements);
-		
-//		ad.setDecisions(allMCDCRequirements);
-		
-		FileWriter fileWriter = null;
-		
-		try {
-			
-			fileWriter = new FileWriter(xmlFileName + ".xml");
-		
-			BufferedWriter xmlFile = new BufferedWriter(fileWriter);
-			
-			XStream xstream = new XStream(new DomDriver());
-			xstream.alias("allMCDCDecisions", TodasDecisoes.class);
-			xstream.alias("decision", Decisao.class);
-//			xstream.alias("methodCall", MethodCall.class);
-			
-//			ad.setMethodName(method.getFullName());
-			
-			xmlFile.write(xstream.toXML(ad));
-			xmlFile.close(); 
-		}
-		
-		catch (IOException ex) {
-			System.err.println("Problem generating the XML file: " + ex.toString());
-		}
+		XML.criaXML(todasmcdc, XML.Tipo.MCDC);
 	}
 
 	

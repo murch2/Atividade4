@@ -27,7 +27,6 @@ public class XML {
 	}
 	
 	public static void criaXML (Object object, Tipo tipo) {
-		System.out.println("O Objeto que está sendo passado é :" + object) ;
 		
 		String fileName = ""; 
 		try {
