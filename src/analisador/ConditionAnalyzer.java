@@ -40,11 +40,10 @@ public class ConditionAnalyzer  {
 	        
 	        geraTabelaVerdade(tabelaVerdade, "", 0, getNumeroDeCondicoes(decisao));
 	    
-	        List<String> testCasesCopy = new Vector<String>();
+	        List<String> copiaTabelaverdade = new Vector<String>();
 	        
-	        //Copia da tabela verdade
 	        for (String string : tabelaVerdade) {
-				testCasesCopy.add(string);
+				copiaTabelaverdade.add(string);
 			}
 	        
 	        List<String> result = new Vector<String>(); 
@@ -114,8 +113,7 @@ public class ConditionAnalyzer  {
 		
 		return matriz; 
 	}
-	
-	//tinha que testar isso daqui direito 
+	 
 	public String setValorCondicoes(Decisao decisao, String teste){
 
 		if (decisao.getCondicao() != null) {
@@ -174,8 +172,6 @@ public class ConditionAnalyzer  {
 			}
 		} 
 	}
-
-	
 
 	public void getTodasCondicoes(List<Method> todosMetodos) {
 		TodasCondicoes tc = new TodasCondicoes();
@@ -255,8 +251,6 @@ public class ConditionAnalyzer  {
 		XML.criaXML(todasmcdc, XML.Tipo.MCDC);
 	}
 
-	
-    //OK
 	public void getTodasDecisoes(List<Method> todosMetodos) {
 		
 		TodasDecisoes td = new TodasDecisoes();
@@ -284,7 +278,6 @@ public class ConditionAnalyzer  {
 			Vector<ProgramElement> decisoes = this.getTodasDecisoesDoMetodo(metodo);
 			List<Decisao> todasDecisoes = this.encontraDecisoes(decisoes);
 			
-			//Mudar o nome desse método
 			todasDecisoes = getRequisitosTodasDecisoes(todasDecisoes);
 			m.setDecisoes(todasDecisoes);
 			cls.addMetodo(m);
@@ -294,12 +287,11 @@ public class ConditionAnalyzer  {
 		XML.criaXML(td, XML.Tipo.TODASDECISOES);
 	}
 	
-	//OK
-	private List<Decisao> getRequisitosTodasDecisoes(List<Decisao> decisions) {
+	private List<Decisao> getRequisitosTodasDecisoes(List<Decisao> decisoes) {
 
 		List<Decisao> retorno = new Vector<Decisao>();;
 		
-		for (Decisao decisao : decisions) {
+		for (Decisao decisao : decisoes) {
 			Decisao verdadeira = decisao; 
 			Decisao falsa = new Decisao(); 
 			
@@ -315,7 +307,6 @@ public class ConditionAnalyzer  {
 		return retorno; 
 	}
 	
-	//OK
 	private List<Decisao> encontraDecisoes (Vector<ProgramElement> decisoes) {
 		List<Decisao> result = new Vector<Decisao>();
 		 
@@ -328,17 +319,13 @@ public class ConditionAnalyzer  {
 				EncontraDecisãoCompleta.encontraDesicaoCompletaR(arvore, decisao);
 			}
 			catch (Exception ex) {
-				//TODO mudar mensagem
-				System.err.println("Error while mapping: " + ex.toString());
+				System.err.println("Erro ao Encontrar decisões");
 			}
-			
 			result.add(decisao);
-			
 		}
 		return result; 
 	}
 	
-	//OK
 	public List<Method> getTodosMetodos(List<CompilationUnit> arvoreAbstrata) {
 
 		List<Method> metodos = new Vector<Method>();
@@ -356,7 +343,7 @@ public class ConditionAnalyzer  {
 		}
 		return metodos;
 	}
-	//OK
+	
 	public Vector<ProgramElement> getTodasDecisoesDoMetodo(Method metodo) {
 
 			Vector<ProgramElement> decisoes = new Vector<ProgramElement>();
@@ -381,7 +368,7 @@ public class ConditionAnalyzer  {
 			return decisoes;
 		}
 	
-	//OK
+
 	private void getCondicoesDasDecisoes(Decisao decisao, List<Condicao> condicoes) {
 
 		if (decisao.getCondicao() != null)
@@ -397,26 +384,25 @@ public class ConditionAnalyzer  {
 		}
 	}
 
-	//TODO Mudar para ficar igual o de decisões 
-	private List<Condicao> getRequisitosTodasCondicoes(List<Condicao> conditions) {
+ 
+	private List<Condicao> getRequisitosTodasCondicoes(List<Condicao> condicoes) {
 
-		List<Condicao> conditions_temp = new Vector<Condicao>();;
-		Iterator<Condicao> iterator = conditions.iterator(); 
+		List<Condicao> retorno = new Vector<Condicao>(); 
 
-		while (iterator.hasNext()) {
+		for (Condicao condicao : condicoes) {
 
-			Condicao trueCondition = iterator.next();
-			Condicao falseCondition = new Condicao();
+			Condicao verdadeira = condicao;
+			Condicao falsa = new Condicao();
 
-			trueCondition.setValor(true);  
+			verdadeira.setValor(true);  
 
-			falseCondition = trueCondition.getCopy();
-			falseCondition.setValor(false);
+			falsa = verdadeira.getCopy();
+			falsa.setValor(false);
 
-			conditions_temp.add(falseCondition);
-			conditions_temp.add(trueCondition);
+			retorno.add(falsa);
+			retorno.add(verdadeira);
 		} 
-		return conditions_temp;
+		return retorno;
 	}
 	
 
@@ -426,7 +412,7 @@ public class ConditionAnalyzer  {
 		}
 	}
 
-	//OK
+
 	public int getNumeroDeCondicoes(Decisao decisao){
 
 		if (decisao.getCondicao() != null) {
@@ -440,7 +426,7 @@ public class ConditionAnalyzer  {
 		}
 	}
 	
-	//OK
+
     public void geraTabelaVerdade(List<String> tabelaVerdade, String condicoes, int index, int tamanho){
         
     	String condicoesEsquerda ,condicoesDireita;
