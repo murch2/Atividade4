@@ -1,9 +1,6 @@
 package modelo;
 
 import java.util.List;
-import java.util.Vector;
-
-import analisador.ConditionAnalyzer;
 
 public class Metodo {
 	private String metodo; 

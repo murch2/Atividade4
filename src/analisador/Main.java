@@ -63,7 +63,7 @@ public class Main {
 		
 //		conditionAnalyzer.getTodasCondicoes(metodos);
 //		conditionAnalyzer.getTodasDecisoes(metodos); 
-		conditionAnalyzer.getAllMCDC(metodos);
+		conditionAnalyzer.getTodasMCDC(metodos);
 		
 	}
 }

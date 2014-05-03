@@ -1,8 +1,5 @@
 package analisador;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
@@ -26,87 +23,56 @@ import recoder.java.statement.If;
 import recoder.java.statement.While;
 import suporte.XML;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
-
-import edu.emory.mathcs.backport.java.util.concurrent.locks.Condition;
-
 public class ConditionAnalyzer  {
-
-
+	
+	//Apensa um contador global para o metodo valorEsperado
+	private static int indexGlobal = 0; 
 		
-	//Retorna um array com cada decisão representada em todos os seus possiveis valores(TODOS)
-	private List<Decisao> getMCDCRequirements(List<Decisao> decisions) {
+	private List<Decisao> getRequisitiosMCDC(List<Decisao> decisoes) {
 		
-		List<Decisao> mcdcdecisions_temp = new Vector<Decisao>();;
-		Iterator<Decisao> iterator = decisions.iterator(); 
+		List<Decisao> decisoesMCDC = new Vector<Decisao>();
+		
 		boolean auz = true; 
-		while (iterator.hasNext()) {
-			
-			Decisao decision = iterator.next();
-			
-//	        String [] testcases_str = null;
-	        List<String> testCases = new Vector<String>();
+
+		for (Decisao decisao : decisoes) {
+	
+	        List<String> tabelaVerdade = new Vector<String>();
 	        
-	        // get all testCases (2^n)
-	        getAllRequirementsFromConditions(testCases, "", 0, getNumberOfConditions(decision));
-	        
-	        //Copia do testCase porque ele é destruido. 
+	        geraTabelaVerdade(tabelaVerdade, "", 0, getNumeroDeCondicoes(decisao));
 	    
 	        List<String> testCasesCopy = new Vector<String>();
 	        
-	        for (String string : testCases) {
+	        //Copia da tabela verdade
+	        for (String string : tabelaVerdade) {
 				testCasesCopy.add(string);
 			}
 	        
 	        List<String> result = new Vector<String>(); 
 	         
-	        for(String test: testCases) {
-	        	List<Boolean> testList = new Vector<Boolean>();
-	        	List<Boolean> testList2 = new Vector<Boolean>();
-	        	
-	        	//Pegou a lista de String passou pra booleano e duplicou
-				while(test.length() != 0) {
-					char chr = ' ';
-					chr = test.charAt(0);
-					test = test.substring(1);
-					
-					if(chr == 'T'){
-						testList.add(true); 
-						testList2.add(true);
-					}
-					else {
-						testList.add(false);
-						testList2.add(false);
-					}
-					 
-				}
+	        for(String teste: tabelaVerdade) {
 				
+	        	Decisao decisao2 = new Decisao();
+				decisao.copiaDecisao(decisao2,decisao);
 				
-	        	Decisao decision2 = new Decisao();
-				decision.copiaDecisao(decision2,decision);
-				//Até aqui ele duplicou as decisões e criou o vetor
+				setValorCondicoes(decisao2,teste);
+				 
+				indexGlobal = 0; 
+				char valor = valorEsperado(decisao2, teste); 
 				
-				setTestCase(decision2,testList);
+				if (valor == 'T')
+					decisao2.setValor(true);
+				else 
+					decisao2.setValor(false);
 				
-				boolean valor = expectedValue(decision2, testList2); 
-				decision2.setValor(valor);
-				
-				if (valor) {
-					result.add("T"); 
-				} 
-				else {
-					result.add("F"); 
-				}
-
-				mcdcdecisions_temp.add(decision2);  
+				result.add(valor + ""); 
+				decisoesMCDC.add(decisao2);  
 	        }
 //			testCasesCopy tem a tabela verdade nesse ponto
 	        //Tirando só pra testar (Antonio vai fazer essa parte)
 //	        this.eliminaTestesAmbuiguos(testCasesCopy, result); 
 	        
 		} 
-		return mcdcdecisions_temp;
+		return decisoesMCDC;
 	}
 	
 	//Algoritmo do n³
@@ -149,133 +115,67 @@ public class ConditionAnalyzer  {
 		return matriz; 
 	}
 	
-	//Isso gera todas as combinações possiveis da tabela verdade e guarda em testCases.
-    public void getAllRequirementsFromConditions(List<String> testCases, String conditions, int nivel, int nivelmax){
-        
-    	String conditions_left,conditions_right;
-       
-        if (nivel < nivelmax) {
-       
-            nivel++;
-           
-            conditions_left = conditions + "T";
-            getAllRequirementsFromConditions(testCases,conditions_left, nivel, nivelmax);
-           
-            conditions_right = conditions + "F";
-            getAllRequirementsFromConditions(testCases,conditions_right, nivel, nivelmax);
-        }
-        else {
-        	testCases.add(conditions);
-        }
-    }
-	
-	
-	//Coloca os valores do vetor booleano na respectiva condição. 
-	public List<Boolean> setTestCase(Decisao decision, List<Boolean> testCase){
+	//tinha que testar isso daqui direito 
+	public String setValorCondicoes(Decisao decisao, String teste){
 
-		// base o recursion
-		if (decision.getCondicao() != null) {
-			
-			Condicao condition = decision.getCondicao();
+		if (decisao.getCondicao() != null) {
+			Condicao condicao = decisao.getCondicao();
 	
-			if (testCase.get(0) == true) {
-				condition.setValor(true);
+			char c = ' '; 
+			c = teste.charAt(0);
+			
+			if(c == 'T'){
+				condicao.setValor(true);
 			}	
 			else {
-				condition.setValor(false);
+				condicao.setValor(false);
 			}
 			
-			testCase.remove(0);
-			return testCase;
+			teste = teste.substring(1);
+			return teste;
 
 		} 
 		else {
-			Decisao lhs = decision.getDecisaoEsquerda(); 
-			Decisao rhs = decision.getDecisaoDireita();
+			Decisao decisaoEsquerda = decisao.getDecisaoEsquerda(); 
+			Decisao decisaoDireita = decisao.getDecisaoDireita();
 			
-			testCase = setTestCase(lhs,testCase);
-			testCase = setTestCase(rhs,testCase);
+			teste = setValorCondicoes(decisaoEsquerda,teste);
+			teste = setValorCondicoes(decisaoDireita,teste);
 			
-			return testCase;
+			return teste;
 		} 
 	}	
-	
-	
-	
-	//Devolve se a decisão Completa eh true ou false. 
-	public Boolean expectedValue(Decisao decision, List<Boolean> testCase) {
+	 
+	public char valorEsperado(Decisao decisao, String teste) {
 
-		// base o recursion
-		if (decision.getCondicao() != null) {
-			
-			if(testCase.get(0) == true) {
-				testCase.remove(0);
-				return true;
-			}	
-			else {
-				testCase.remove(0);
-				return false; 
-			}
+		if (decisao.getCondicao() != null) {
+			char c = ' '; 
+			c = teste.charAt(indexGlobal++); 
+			return c; 
 		} 
 		else {
-			Decisao lhs = decision.getDecisaoEsquerda(); 
-			Decisao rhs = decision.getDecisaoDireita();
+			Decisao decisaoEsquerda = decisao.getDecisaoEsquerda(); 
+			Decisao decisaoDireita = decisao.getDecisaoDireita();
 			
-			if (decision.getOperador().equals("OR")) {
-
-				if(expectedValue(lhs,testCase) || expectedValue(rhs,testCase)) {
-
-					return true;
+			if (decisao.getOperador().equals("OR")) {
+				if(valorEsperado(decisaoEsquerda,teste) == 'T' || valorEsperado(decisaoDireita,teste) == 'T') {
+					return 'T';
 				}
-				
-				return false;
+				return 'F';
 			}
-			else if (decision.getOperador().equals("AND")) {
-				
-				if (expectedValue(lhs,testCase) && expectedValue(rhs,testCase)) {
-					
-					return true;
+			else if (decisao.getOperador().equals("AND")) {
+				if (valorEsperado(decisaoEsquerda,teste) == 'T' && valorEsperado(decisaoDireita,teste) == 'T') {
+					return 'T';
 				}
-				
-				return false;
+				return 'F';
 			}
 			else {
-				return false;	
+				return 'F';	
 			}
 		} 
 	}
 
 	
-	/**
-	 * Gets the number of Conditions inside a Decision.
-	 * @param decision The Decision to be analyzed.
-	 * @return The number of Conditions.
-	 */
-	public int getNumberOfConditions(Decisao decision){
-		
-		// base of recursion
-		if (decision.getCondicao() != null) {
-
-			return 1;
-		}
-		
-		else {
-			
-			Decisao lhs = decision.getDecisaoEsquerda(); 
-			Decisao rhs = decision.getDecisaoDireita();
-			
-			int left = 0;
-			int right = 0;
-			
-			left = getNumberOfConditions(lhs);
-			
-			
-			if (rhs != null)
-				right = getNumberOfConditions(rhs); 
-
-			return left + right;
-		}
-	}
 
 	public void getTodasCondicoes(List<Method> todosMetodos) {
 		TodasCondicoes tc = new TodasCondicoes();
@@ -322,16 +222,12 @@ public class ConditionAnalyzer  {
 		XML.criaXML(tc, XML.Tipo.TODASCONDICOES);
 	}
 
-	
-//	Mudando como ele faz isso. 
-	
-	public void getAllMCDC(List<Method> todosMetodos) {
+	public void getTodasMCDC(List<Method> todosMetodos) {
 		
 		TodasMCDC todasmcdc = new TodasMCDC(); 
 		
 		String nomeClasse = ""; 
 		String nomeClasseAnterior = ""; 
-		List<Condicao> condicoes = new Vector<Condicao>();
 		Classe cls = new Classe();
 
 		for (Method metodo : todosMetodos) {
@@ -350,25 +246,9 @@ public class ConditionAnalyzer  {
 			m.setMetodo(metodo.getFullName().toString());
 
 			Vector<ProgramElement> decisoes = this.getTodasDecisoesDoMetodo(metodo);
-			//Acho muito que aqui tem que ser decisões auxiliares
 			List<Decisao> todasDecisoes = this.encontraDecisoes(decisoes);
-//			List<DecisaoAux> decisoesAuxiliares = new Vector<DecisaoAux>();
-			
-			//Aqui que tem que mudar, o que ele faz pra cada decisao. 
-//			for (Decisao decisao : todasDecisoes) {
-//				DecisaoAux d = new DecisaoAux(); 
-//				d.setCodigo(decisao.getCodigo());
-//				getCondicoesDasDecisoes(decisao, condicoes);
-//				condicoes = getRequisitosTodasCondicoes(condicoes);
-//				d.setCondicoes(condicoes);
-////				decisoesAuxiliares.add(d); 
-//				condicoes = new Vector<Condicao>();
-//			}
-			
-			todasDecisoes = getMCDCRequirements(todasDecisoes); 
+			todasDecisoes = getRequisitiosMCDC(todasDecisoes); 
 			m.setDecisoes(todasDecisoes);
-			
-//			m.setDecisoesAuxiliares(decisoesAuxiliares);
 			cls.addMetodo(m);
 		}
 		
@@ -414,7 +294,7 @@ public class ConditionAnalyzer  {
 		XML.criaXML(td, XML.Tipo.TODASDECISOES);
 	}
 	
-	//OK Esse metodo pode mudar (Lembrar de conversar com o Antoni
+	//OK
 	private List<Decisao> getRequisitosTodasDecisoes(List<Decisao> decisions) {
 
 		List<Decisao> retorno = new Vector<Decisao>();;
@@ -545,4 +425,38 @@ public class ConditionAnalyzer  {
 			System.out.println(string);
 		}
 	}
+
+	//OK
+	public int getNumeroDeCondicoes(Decisao decisao){
+
+		if (decisao.getCondicao() != null) {
+			return 1;
+		}
+		else {
+			if (decisao.getDecisaoDireita() == null)
+				return getNumeroDeCondicoes(decisao.getDecisaoEsquerda()); 
+			else 
+				return (getNumeroDeCondicoes(decisao.getDecisaoEsquerda()) + getNumeroDeCondicoes(decisao.getDecisaoDireita()));
+		}
+	}
+	
+	//OK
+    public void geraTabelaVerdade(List<String> tabelaVerdade, String condicoes, int index, int tamanho){
+        
+    	String condicoesEsquerda ,condicoesDireita;
+       
+        if (index < tamanho) {
+       
+            index++;
+           
+            condicoesEsquerda = condicoes + "T";
+            geraTabelaVerdade(tabelaVerdade,condicoesEsquerda, index, tamanho);
+           
+            condicoesDireita = condicoes + "F";
+            geraTabelaVerdade(tabelaVerdade,condicoesDireita, index, tamanho);
+        }
+        else {
+        	tabelaVerdade.add(condicoes);
+        }
+    }
 }

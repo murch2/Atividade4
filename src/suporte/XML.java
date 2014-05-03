@@ -27,6 +27,7 @@ public class XML {
 	}
 	
 	public static void criaXML (Object object, Tipo tipo) {
+		System.out.println("Criando Arquivo XML ... ");
 		
 		String fileName = ""; 
 		try {
@@ -61,6 +62,8 @@ public class XML {
 			
 			xmlFile.write(xstream.toXML(object));
 			xmlFile.close(); 
+			
+			System.out.println("Arquivo " + fileName + "Criado com sucesso!");
 		}
 
 		catch (IOException e) {
