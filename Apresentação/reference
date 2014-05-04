@@ -1,0 +1,227 @@
+\begin{frame}
+  \frametitle{Agentes}
+  \begin{itemize}
+    \item Uma classe para cada agente
+    \item São atributos de outras classes
+    \item Quando criado, um host pode ser um servidor http ou um cliente http ou um servidor dns 
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=10cm, height=3cm]{images/agents.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Mensagem}
+  \begin{itemize}
+    \item Uma mensagem é possui um número de identificação único
+    \item Ela possui atributos que identificam cada parte da mensagem
+    \item http\_message ou dns\_message. O atributo \textit{ip} será inicializado em ambos
+    \item Se http\_message, \textit{http} e \textit{tcp} serão atribuídos
+    \item Se dns\_message, \textit{dns} e \textit{udp} serão atribuídos
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=7cm, height=4cm]{images/mensagem.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Tempo}
+  \begin{itemize}
+    \item Cada mensagem controla o seu próprio tempo
+    \item Cada enlace possui uma lista das mensagens que passaram por ele
+    \item A cada nova mensagem, o enlace reorganiza a lista
+    \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=4cm, height=3cm]{images/reloginho.jpg}
+    \end{center}
+  \end{figure}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{O que não cumprimos}
+  \begin{itemize}
+    \item Não segmentamos o arquivo
+    \item Não implementamos o controle de congestionamento 
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=6cm, height=5cm]{images/baby.jpg}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\section{Ambiente}
+\begin{frame}
+	\frametitle{Detalhes do Ambiente}
+	Sistema Operacional: Ubuntu 13.04 \\
+	Processador: Intel Core i5-2430M CPU 2.40GHz x 4 \\
+	RAM: 7,7 GiB \\
+	Hard Disk: 295,2 GB
+\end{frame}
+
+\section{Conclusão}
+\begin{frame}
+  \frametitle{Dificuldades}
+  \begin{itemize}
+    \item EP muito grande para o final de semestre
+      \begin{itemize}
+      \item Simultâneo com projetos de outras matérias
+      \end{itemize}
+    \item Controle de Congestionamento
+      \begin{itemize}
+      \item Algoritmo complicado e difícil de encaixar na nossa implementação
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pontos positivos}
+  \begin{itemize}
+    \item Maior compreensão de todos os protocolos envolvidos
+    \item Funcionamento dos roteadores
+    \item Orientação a objetos
+  \end{itemize}
+\end{frame}
+
+\section{Arquivo de Saída}
+\begin{frame}
+  \frametitle{Estabelecimento de Conexão}
+  \begin{itemize}
+    \item O cliente manda um pedido para iniciar uma conexão
+    \item A mensagem http vai vazia
+    \item O cabeçalho tcp é enviado com o bit syn ligado
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=4cm, height=5cm]{images/1syn.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Estabelecimento de Conexão}
+  \begin{itemize}
+    \item O servidor manda uma confirmação de que a conexão será estabelecida
+    \item A mensagem http vai vazia
+    \item O cabeçalho tcp é enviado com os bits syn e ack ligados
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=4cm, height=5cm]{images/synakc.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Estabelecimento de Conexão}
+  \begin{itemize}
+    \item O cliente manda um ack de que recebeu a confirmação do servidor
+    \item A mensagem http vai vazia
+    \item O cabeçalho tcp é enviado com o bit ack ligado
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=4cm, height=5cm]{images/1ack.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Encerramento de Conexão}
+  \begin{itemize}
+    \item O servidor é responsável por encerrar a conexão 
+    \item A mensagem http vai vazia
+    \item O cabeçalho tcp é enviado com o fin ligado
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=4cm, height=5cm]{images/1fin.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Encerramento de Conexão}
+  \begin{itemize}
+    \item O cliente manda uma mensagem ack pra encerrar a conexão
+    \item A mensagem http vai vazia
+    \item O cabeçalho tcp é enviado com o ack ligado
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=4cm, height=5cm]{images/2ack.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Encerramento de Conexão}
+  \begin{itemize}
+    \item O cliente manda uma mensagem fin confirmar o encerramento
+    \item A mensagem http vai vazia
+    \item O cabeçalho tcp é enviado com o fin ligado
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=4cm, height=5cm]{images/2fin.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Encerramento de Conexão}
+  \begin{itemize}
+    \item O servidor manda uma mensagem ack pra encerrar totalmente a conexão
+    \item A mensagem http vai vazia
+    \item O cabeçalho tcp é enviado com o ack ligado
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=4cm, height=5cm]{images/3ack.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gráfico}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=8cm, height=4cm]{images/graficos.png}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dados}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=8cm, height=4cm]{images/media.png}
+    \end{center}
+    \caption Média dos resultados
+  \end{figure}
+\end{frame}
+\begin{frame}
+  \frametitle{Dados}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=8cm, height=4cm]{images/icT.png}
+    \end{center}
+    \caption Intervalos de confiança do tempo
+  \end{figure}
+  \end{frame}
+  \begin{frame}
+  \frametitle{Dados}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[width=8cm, height=4cm]{images/icCPU.png}
+    \end{center}
+    \caption Intervalos de confiança do consumo de CPU
+  \end{figure}
+\end{frame}

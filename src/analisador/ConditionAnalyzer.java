@@ -81,39 +81,55 @@ public class ConditionAnalyzer  {
 	//Algoritmo do n³
 	public List<String> eliminaTestesAmbuiguos (List<String> testCases, List<String> saida) {
 		List<String> result = new Vector<String>(); 
-		
+
 		String[][] matriz = criaMatriz(testCases, saida);
 		
+		//Imprime a matriz
 		for (int i = 0; i < matriz.length; i++) {
 			System.out.println("");
 			for (int j = 0; j < matriz[0].length; j++)
 				System.out.print(matriz[i][j]);
 		}
-		System.out.println("");
-		System.out.println("linha: " + matriz.length);
-		System.out.println("coluna: " + matriz[0].length);
+		
+		//For que tem que fixar as variaveis
 		for (int i = 0; i < matriz.length - 1; i++) {
 			for (int j = 0; j < matriz[0].length; j++){
 				int k;
 				for (k = 0; k < matriz[0].length; k++){
+					//Esse if viu se a variavel eh diferente e o resultado eh diferente, falta ver se todo o resto eh igual
 					if (!matriz[i][j].equals(matriz[i][k]) && !matriz[matriz.length-1][j].equals(matriz[matriz.length-1][k])) {
-						System.out.println("D: " + i);
-						System.out.println("T" + j + ": " + testCases.get(j));
-						System.out.println("T" + k + ": " + testCases.get(k));
-						System.out.println("matriz[i][j]:" + matriz[i][j] + "matriz[matriz.length-1][j]:" + matriz[matriz.length-1][j]);
-						System.out.println("matriz[i][k]:" + matriz[i][k] + "matriz[matriz.length-1][k]:" + matriz[matriz.length-1][k]);
-						if (!result.contains(testCases.get(j))){
-							result.add(testCases.get(j));
+						boolean testeBom = true; 
+						for (int index = 0; index < matriz.length - 1 && testeBom; index++)
+							if (index != i && !matriz[index][j].equals(matriz[index][k])) {
+									testeBom = false; 
+							}
+						if (testeBom) {
+							System.out.println("Teste BOOOOOOOOOOOOOOOM!");
+							if (!result.contains(testCases.get(j))){
+								System.out.println("Adicionando teste = " + j);
+								result.add(testCases.get(j));
+							}
+							if (!result.contains(testCases.get(k))){
+								System.out.println("Adicionando teste = " + k);
+								result.add(testCases.get(k));
+							}
+							//Maneira de dar break 
+							k = j = matriz[0].length;
 						}
-						if (!result.contains(testCases.get(k))){
-							result.add(testCases.get(k));
-						}
-						break;
+						
+//						System.out.println("D: " + i);
+//						System.out.println("T" + j + ": " + testCases.get(j));
+//						System.out.println("T" + k + ": " + testCases.get(k));
+//						System.out.println("matriz[i][j]:" + matriz[i][j] + "matriz[matriz.length-1][j]:" + matriz[matriz.length-1][j]);
+//						System.out.println("matriz[i][k]:" + matriz[i][k] + "matriz[matriz.length-1][k]:" + matriz[matriz.length-1][k]);
+						
+						//Colocando o teste j e k
+					
 					}
 				}
-				if (!matriz[i][j].equals(matriz[i][k]) && !matriz[matriz.length-1][j].equals(matriz[matriz.length-1][k])) {
-					break;
-				}
+//				if (!matriz[i][j].equals(matriz[i][k]) && !matriz[matriz.length-1][j].equals(matriz[matriz.length-1][k])) {
+//					break;
+//				}
 			}
 		}
 		
@@ -121,7 +137,7 @@ public class ConditionAnalyzer  {
 		for (String teste: result) {
 			System.out.println(teste);
 		}
-		
+		System.out.println("\n\n");
 		return result; 
 	}
 	

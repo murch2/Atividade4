@@ -28,21 +28,21 @@
                     <valor>true</valor>
                   </condicao>
                 </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> c == 1000</codigo>
+                <codigo> c == 0</codigo>
                 <condicao>
                   <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 1000</argumentoDireita>
+                  <argumentoDireita> 0</argumentoDireita>
                   <operador>IGUALDADE</operador>
-                  <codigo> c == 1000</codigo>
+                  <codigo> c == 0</codigo>
                   <valor>true</valor>
                 </condicao>
               </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 1000</codigo>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
               <valor>true</valor>
             </decision>
             <decision>
@@ -67,22 +67,22 @@
                     <valor>true</valor>
                   </condicao>
                 </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> c == 1000</codigo>
+                <codigo> c == 0</codigo>
                 <condicao>
                   <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 1000</argumentoDireita>
+                  <argumentoDireita> 0</argumentoDireita>
                   <operador>IGUALDADE</operador>
-                  <codigo> c == 1000</codigo>
+                  <codigo> c == 0</codigo>
                   <valor>false</valor>
                 </condicao>
               </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 1000</codigo>
-              <valor>true</valor>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
+              <valor>false</valor>
             </decision>
             <decision>
               <decisaoEsquerda>
@@ -106,22 +106,22 @@
                     <valor>false</valor>
                   </condicao>
                 </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> c == 1000</codigo>
+                <codigo> c == 0</codigo>
                 <condicao>
                   <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 1000</argumentoDireita>
+                  <argumentoDireita> 0</argumentoDireita>
                   <operador>IGUALDADE</operador>
-                  <codigo> c == 1000</codigo>
+                  <codigo> c == 0</codigo>
                   <valor>true</valor>
                 </condicao>
               </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 1000</codigo>
-              <valor>true</valor>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
+              <valor>false</valor>
             </decision>
             <decision>
               <decisaoEsquerda>
@@ -145,22 +145,22 @@
                     <valor>false</valor>
                   </condicao>
                 </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> c == 1000</codigo>
+                <codigo> c == 0</codigo>
                 <condicao>
                   <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 1000</argumentoDireita>
+                  <argumentoDireita> 0</argumentoDireita>
                   <operador>IGUALDADE</operador>
-                  <codigo> c == 1000</codigo>
+                  <codigo> c == 0</codigo>
                   <valor>false</valor>
                 </condicao>
               </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 1000</codigo>
-              <valor>true</valor>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
+              <valor>false</valor>
             </decision>
             <decision>
               <decisaoEsquerda>
@@ -184,22 +184,22 @@
                     <valor>true</valor>
                   </condicao>
                 </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> c == 1000</codigo>
+                <codigo> c == 0</codigo>
                 <condicao>
                   <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 1000</argumentoDireita>
+                  <argumentoDireita> 0</argumentoDireita>
                   <operador>IGUALDADE</operador>
-                  <codigo> c == 1000</codigo>
+                  <codigo> c == 0</codigo>
                   <valor>true</valor>
                 </condicao>
               </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 1000</codigo>
-              <valor>true</valor>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
+              <valor>false</valor>
             </decision>
             <decision>
               <decisaoEsquerda>
@@ -223,22 +223,22 @@
                     <valor>true</valor>
                   </condicao>
                 </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> c == 1000</codigo>
+                <codigo> c == 0</codigo>
                 <condicao>
                   <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 1000</argumentoDireita>
+                  <argumentoDireita> 0</argumentoDireita>
                   <operador>IGUALDADE</operador>
-                  <codigo> c == 1000</codigo>
+                  <codigo> c == 0</codigo>
                   <valor>false</valor>
                 </condicao>
               </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 1000</codigo>
-              <valor>true</valor>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
+              <valor>false</valor>
             </decision>
             <decision>
               <decisaoEsquerda>
@@ -262,22 +262,22 @@
                     <valor>false</valor>
                   </condicao>
                 </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> c == 1000</codigo>
+                <codigo> c == 0</codigo>
                 <condicao>
                   <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 1000</argumentoDireita>
+                  <argumentoDireita> 0</argumentoDireita>
                   <operador>IGUALDADE</operador>
-                  <codigo> c == 1000</codigo>
+                  <codigo> c == 0</codigo>
                   <valor>true</valor>
                 </condicao>
               </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 1000</codigo>
-              <valor>true</valor>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
+              <valor>false</valor>
             </decision>
             <decision>
               <decisaoEsquerda>
@@ -301,21 +301,21 @@
                     <valor>false</valor>
                   </condicao>
                 </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> c == 1000</codigo>
+                <codigo> c == 0</codigo>
                 <condicao>
                   <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 1000</argumentoDireita>
+                  <argumentoDireita> 0</argumentoDireita>
                   <operador>IGUALDADE</operador>
-                  <codigo> c == 1000</codigo>
+                  <codigo> c == 0</codigo>
                   <valor>false</valor>
                 </condicao>
               </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 1000</codigo>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
               <valor>false</valor>
             </decision>
           </decisoes>
