@@ -49,11 +49,11 @@ public class ConditionAnalyzer  {
 	        List<String> result = new Vector<String>();
 	        List<String> testCasesCopy = new Vector<String>();
 	        
+//	         
+	        
+	        //Logica ruim precisa ser mudada mas assim funciona
 	        for(String teste: tabelaVerdade) {
-				
-	        	// Copia da tabela de verdade
 	        	testCasesCopy.add(teste);
-	        	
 	        	Decisao decisao2 = new Decisao();
 				decisao.copiaDecisao(decisao2,decisao);
 				
@@ -68,35 +68,47 @@ public class ConditionAnalyzer  {
 					decisao2.setValor(false);
 				
 				result.add(valor + ""); 
-				decisoesMCDC.add(decisao2);  
+								
 	        }
+	        
+	        List<String> testesValidos = this.eliminaTestesAmbuiguos(testCasesCopy, result);
+	        
+	        for (String testeValido: testesValidos) {
+	        	Decisao decisao2 = new Decisao();
+				decisao.copiaDecisao(decisao2,decisao);
+				
+				setValorCondicoes(decisao2,testeValido);
+				 
+				indexGlobal = 0; 
+				char valor = valorEsperado(decisao2, testeValido); 
+				
+				if (valor == 'T')
+					decisao2.setValor(true);
+				else 
+					decisao2.setValor(false);
+				
+				decisoesMCDC.add(decisao2); 
+	        }
+	        
+	        
+	        
 //			testCasesCopy tem a tabela verdade nesse ponto
 	        //Tirando só pra testar (Antonio vai fazer essa parte)
-	        this.eliminaTestesAmbuiguos(testCasesCopy, result); 
+	        
 	        
 		} 
 		return decisoesMCDC;
 	}
 	
-	//Algoritmo do n³
 	public List<String> eliminaTestesAmbuiguos (List<String> testCases, List<String> saida) {
 		List<String> result = new Vector<String>(); 
 
 		String[][] matriz = criaMatriz(testCases, saida);
 		
-		//Imprime a matriz
-		for (int i = 0; i < matriz.length; i++) {
-			System.out.println("");
-			for (int j = 0; j < matriz[0].length; j++)
-				System.out.print(matriz[i][j]);
-		}
-		
-		//For que tem que fixar as variaveis
 		for (int i = 0; i < matriz.length - 1; i++) {
 			for (int j = 0; j < matriz[0].length; j++){
 				int k;
 				for (k = 0; k < matriz[0].length; k++){
-					//Esse if viu se a variavel eh diferente e o resultado eh diferente, falta ver se todo o resto eh igual
 					if (!matriz[i][j].equals(matriz[i][k]) && !matriz[matriz.length-1][j].equals(matriz[matriz.length-1][k])) {
 						boolean testeBom = true; 
 						for (int index = 0; index < matriz.length - 1 && testeBom; index++)
@@ -104,7 +116,6 @@ public class ConditionAnalyzer  {
 									testeBom = false; 
 							}
 						if (testeBom) {
-							System.out.println("Teste BOOOOOOOOOOOOOOOM!");
 							if (!result.contains(testCases.get(j))){
 								System.out.println("Adicionando teste = " + j);
 								result.add(testCases.get(j));
@@ -116,28 +127,18 @@ public class ConditionAnalyzer  {
 							//Maneira de dar break 
 							k = j = matriz[0].length;
 						}
-						
-//						System.out.println("D: " + i);
-//						System.out.println("T" + j + ": " + testCases.get(j));
-//						System.out.println("T" + k + ": " + testCases.get(k));
-//						System.out.println("matriz[i][j]:" + matriz[i][j] + "matriz[matriz.length-1][j]:" + matriz[matriz.length-1][j]);
-//						System.out.println("matriz[i][k]:" + matriz[i][k] + "matriz[matriz.length-1][k]:" + matriz[matriz.length-1][k]);
-						
-						//Colocando o teste j e k
-					
 					}
 				}
-//				if (!matriz[i][j].equals(matriz[i][k]) && !matriz[matriz.length-1][j].equals(matriz[matriz.length-1][k])) {
-//					break;
-//				}
 			}
 		}
 		
-		System.out.println("\nTestCases escolhidos!");
-		for (String teste: result) {
-			System.out.println(teste);
-		}
-		System.out.println("\n\n");
+//		Descomentar para ver quais testes foram escolhidos. 
+		
+//		System.out.println("\nTestCases escolhidos!");
+//		for (String teste: result) {
+//			System.out.println(teste);
+//		}
+//		System.out.println("\n\n");
 		return result; 
 	}
 	

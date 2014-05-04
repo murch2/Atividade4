@@ -54,7 +54,7 @@
                     <argumentoDireita> 0</argumentoDireita>
                     <operador>MAIOR</operador>
                     <codigo>a &gt; 0</codigo>
-                    <valor>true</valor>
+                    <valor>false</valor>
                   </condicao>
                 </decisaoEsquerda>
                 <decisaoDireita>
@@ -77,7 +77,7 @@
                   <argumentoDireita> 0</argumentoDireita>
                   <operador>IGUALDADE</operador>
                   <codigo> c == 0</codigo>
-                  <valor>false</valor>
+                  <valor>true</valor>
                 </condicao>
               </decisaoDireita>
               <operador>AND</operador>
@@ -142,163 +142,7 @@
                     <argumentoDireita> 0</argumentoDireita>
                     <operador>IGUALDADE</operador>
                     <codigo> b == 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>AND</operador>
-                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>false</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
-              <valor>false</valor>
-            </decision>
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
                     <valor>true</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>AND</operador>
-                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>true</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
-              <valor>false</valor>
-            </decision>
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>true</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>AND</operador>
-                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>false</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
-              <valor>false</valor>
-            </decision>
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>AND</operador>
-                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>true</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
-              <valor>false</valor>
-            </decision>
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>false</valor>
                   </condicao>
                 </decisaoDireita>
                 <operador>AND</operador>
