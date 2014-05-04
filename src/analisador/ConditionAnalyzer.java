@@ -46,10 +46,14 @@ public class ConditionAnalyzer  {
 				copiaTabelaverdade.add(string);
 			}
 	        
-	        List<String> result = new Vector<String>(); 
-	         
+	        List<String> result = new Vector<String>();
+	        List<String> testCasesCopy = new Vector<String>();
+	        
 	        for(String teste: tabelaVerdade) {
 				
+	        	// Copia da tabela de verdade
+	        	testCasesCopy.add(teste);
+	        	
 	        	Decisao decisao2 = new Decisao();
 				decisao.copiaDecisao(decisao2,decisao);
 				
@@ -68,7 +72,7 @@ public class ConditionAnalyzer  {
 	        }
 //			testCasesCopy tem a tabela verdade nesse ponto
 	        //Tirando só pra testar (Antonio vai fazer essa parte)
-//	        this.eliminaTestesAmbuiguos(testCasesCopy, result); 
+	        this.eliminaTestesAmbuiguos(testCasesCopy, result); 
 	        
 		} 
 		return decisoesMCDC;
@@ -83,7 +87,39 @@ public class ConditionAnalyzer  {
 		for (int i = 0; i < matriz.length; i++) {
 			System.out.println("");
 			for (int j = 0; j < matriz[0].length; j++)
-				System.out.print(matriz[i][j] + " ");
+				System.out.print(matriz[i][j]);
+		}
+		System.out.println("");
+		System.out.println("linha: " + matriz.length);
+		System.out.println("coluna: " + matriz[0].length);
+		for (int i = 0; i < matriz.length - 1; i++) {
+			for (int j = 0; j < matriz[0].length; j++){
+				int k;
+				for (k = 0; k < matriz[0].length; k++){
+					if (!matriz[i][j].equals(matriz[i][k]) && !matriz[matriz.length-1][j].equals(matriz[matriz.length-1][k])) {
+						System.out.println("D: " + i);
+						System.out.println("T" + j + ": " + testCases.get(j));
+						System.out.println("T" + k + ": " + testCases.get(k));
+						System.out.println("matriz[i][j]:" + matriz[i][j] + "matriz[matriz.length-1][j]:" + matriz[matriz.length-1][j]);
+						System.out.println("matriz[i][k]:" + matriz[i][k] + "matriz[matriz.length-1][k]:" + matriz[matriz.length-1][k]);
+						if (!result.contains(testCases.get(j))){
+							result.add(testCases.get(j));
+						}
+						if (!result.contains(testCases.get(k))){
+							result.add(testCases.get(k));
+						}
+						break;
+					}
+				}
+				if (!matriz[i][j].equals(matriz[i][k]) && !matriz[matriz.length-1][j].equals(matriz[matriz.length-1][k])) {
+					break;
+				}
+			}
+		}
+		
+		System.out.println("\nTestCases escolhidos!");
+		for (String teste: result) {
+			System.out.println(teste);
 		}
 		
 		return result; 
