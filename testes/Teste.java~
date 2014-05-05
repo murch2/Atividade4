@@ -1,9 +1,0 @@
-public class Teste2 {
-	public void funcao () {
-		int a = 0; 
-		int b = 100; 
-		int c = 0; 
-		if (a > 0 || b == 0 || c == 0)
-			System.out.println("A eh maior que 0");		
-	}
-} 
