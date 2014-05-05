@@ -9,18 +9,7 @@ public class Decisao {
 	private String codigo;
 	private Boolean valor;
 	private Condicao condicao;
-	
-	
-//	private int totalConditions;
-	
-//	public int getTotalConditions() {
-//		return totalConditions;
-//	}
-//
-//	public void setTotalConditions(int totalConditions) {
-//		this.totalConditions = totalConditions;
-//	}
-	
+
 	public Decisao getDecisaoEsquerda() {
 		return decisaoEsquerda;
 	}
@@ -54,7 +43,6 @@ public class Decisao {
 		this.setOperador(null); 
 		this.setDecisaoEsquerda(null);
 		this.setDecisaoDireita(null);
-//		this.setTotalConditions(1);
 	}
 
 	public Boolean getValor() {

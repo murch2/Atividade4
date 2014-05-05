@@ -1,6 +1,5 @@
 package analisador;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
@@ -25,14 +24,12 @@ import suporte.XML;
 
 public class ConditionAnalyzer  {
 	
-	//Apensa um contador global para o metodo valorEsperado
+	//Apenas um contador global para o metodo valorEsperado
 	private static int indexGlobal = 0; 
 		
 	private List<Decisao> getRequisitiosMCDC(List<Decisao> decisoes) {
 		
 		List<Decisao> decisoesMCDC = new Vector<Decisao>();
-		
-		boolean auz = true; 
 
 		for (Decisao decisao : decisoes) {
 	
@@ -48,10 +45,7 @@ public class ConditionAnalyzer  {
 	        
 	        List<String> result = new Vector<String>();
 	        List<String> testCasesCopy = new Vector<String>();
-	        
-//	         
-	        
-	        //Logica ruim precisa ser mudada mas assim funciona
+
 	        for(String teste: tabelaVerdade) {
 	        	testCasesCopy.add(teste);
 	        	Decisao decisao2 = new Decisao();
@@ -88,14 +82,7 @@ public class ConditionAnalyzer  {
 					decisao2.setValor(false);
 				
 				decisoesMCDC.add(decisao2); 
-	        }
-	        
-	        
-	        
-//			testCasesCopy tem a tabela verdade nesse ponto
-	        //Tirando só pra testar (Antonio vai fazer essa parte)
-	        
-	        
+	        }	        
 		} 
 		return decisoesMCDC;
 	}
@@ -117,11 +104,9 @@ public class ConditionAnalyzer  {
 							}
 						if (testeBom) {
 							if (!result.contains(testCases.get(j))){
-								System.out.println("Adicionando teste = " + j);
 								result.add(testCases.get(j));
 							}
 							if (!result.contains(testCases.get(k))){
-								System.out.println("Adicionando teste = " + k);
 								result.add(testCases.get(k));
 							}
 							//Maneira de dar break 
@@ -131,22 +116,10 @@ public class ConditionAnalyzer  {
 				}
 			}
 		}
-		
-//		Descomentar para ver quais testes foram escolhidos. 
-		
-//		System.out.println("\nTestCases escolhidos!");
-//		for (String teste: result) {
-//			System.out.println(teste);
-//		}
-//		System.out.println("\n\n");
 		return result; 
 	}
-	
-	//Só chama se tiver testes 
+	 
 	public String[][] criaMatriz (List<String> testCases, List<String> saida) {
-		System.out.println("Saida : " + saida);
-		
-		System.out.println("TestCases: " + testCases);
 		
 		String[][] matriz = new String[testCases.get(0).length() + 1][testCases.size()]; 
 		int j = 0; 
@@ -457,14 +430,6 @@ public class ConditionAnalyzer  {
 		} 
 		return retorno;
 	}
-	
-
-	public void Imprime (List<String> matriz) {
-		for (String string : matriz) {
-			System.out.println(string);
-		}
-	}
-
 
 	public int getNumeroDeCondicoes(Decisao decisao){
 

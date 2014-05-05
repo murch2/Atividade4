@@ -22,7 +22,4 @@ public class TodasDecisoes {
 	public void addClasses(Classe cls) {
 		this.classes.add(cls); 
 	}
-	
-	
-	
 }

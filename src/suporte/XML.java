@@ -1,8 +1,3 @@
-/**
- * @author Rodrigo Duarte Louro
- *
- * May 1, 2014
- */
 package suporte;
 
 import java.io.BufferedWriter;

@@ -30,9 +30,7 @@ public class EncontraDecisãoCompleta {
 		if ((arvore.getProgramElement() instanceof VariableReference) ||
 			(arvore.getProgramElement() instanceof BooleanLiteral) ||
 			(arvore.getProgramElement() instanceof ComparativeOperator)) {
-			
-			
-			//TODO não chamar esse método quando for TodasDecisões. 
+			 
 			EncontraDecisãoCompleta.decisaoSimples(arvore, decisao);
 		}
 		else if (arvore.getProgramElement() instanceof LogicalAnd ||
@@ -115,24 +113,13 @@ public class EncontraDecisãoCompleta {
 		}
 
 		else {
+			System.out.println(arvore.getProgramElement().toSource()); 
 			System.err.println("Argumento da decisão desconhecido.");
 			System.exit(0);
 		}
 	}
 
-	
-//	Uma decisao simples possui 3 possiveis exemplos: 
-//	1 - váriável: if (a) 
-//	2 - boolean:  if (true)
-//  3 - Condição: if (a > 5)
-	
 	private static void decisaoSimples (TreeWalker arvore, Decisao decisao) {
-//		System.out.println("ARVORE INTIERA ------------------------------------");
-		
-//		while (arvore.next()) {
-//			System.out.println("elemento (Codigo) = " + arvore.getProgramElement().toSource());
-//			System.out.println("Pai do elemento = " + arvore.getProgramElement().getASTParent().toSource());
-//		}
 		
 		
 		if (arvore.getProgramElement() instanceof VariableReference) {
@@ -144,8 +131,7 @@ public class EncontraDecisãoCompleta {
 			condicaoFinal.setArgumentoDireita(null);
 			condicaoFinal.setOperador(null);
 			decisao.setCondicao(condicaoFinal);
-
-			//Andando na árvore. 
+			
 			arvore.next();
 			arvore.next();
 		}
@@ -161,7 +147,6 @@ public class EncontraDecisãoCompleta {
 			condicaoFinal.setOperador(null);		
 			decisao.setCondicao(condicaoFinal);
 
-			//Andando na Árvore
 			arvore.next();
 		}
 		
@@ -176,7 +161,6 @@ public class EncontraDecisãoCompleta {
 			int id_avo = arvore.getProgramElement().getASTParent().getID();
 			int id_pai = arvore.getProgramElement().getID();
 
-//			Indo para o filho esquerdo
 			arvore.next();
 			arvore.next(); 
 
@@ -185,10 +169,8 @@ public class EncontraDecisãoCompleta {
 
 			ProgramElement elementoEsquerdo = arvore.getProgramElement();
 
-			//Indo para o filho direito 
 			arvore.next();
-			
-			//Voltando para o pai (para depois pegar o lado direito
+		
 			while (arvore.getProgramElement().getASTParent().getID() != id_pai)
 				arvore.next();
 
@@ -205,24 +187,11 @@ public class EncontraDecisãoCompleta {
 			else if (elementoEsquerdo instanceof Operator)
 				condicaoFinal.setArgumentoEsquerda(elementoEsquerdo.toSource());
 			
-//			else if (elementoEsquerdo instanceof MethodReference)
-//				condicaoFinal.setArgumentoEsquerda(elementoEsquerdo.toSource());
-//
-//			else if (elementoEsquerdo instanceof ArrayReference)
-//				condicaoFinal.setArgumentoEsquerda(elementoEsquerdo.toSource());
-//
-//			else if (elementoEsquerdo instanceof MetaClassReference)
-//				condicaoFinal.setArgumentoEsquerda(elementoEsquerdo.toSource());
-//
-//			else if (elementoEsquerdo instanceof ThisReference)
-//				condicaoFinal.setArgumentoEsquerda(elementoEsquerdo.toSource());
-			
 			else {
 				System.err.println("Argumento da esquerda desconhecido.");
 				System.exit(0);
 			}
 
-			// assign the rhs of the condition
 			if (elementoDireito instanceof Identifier || elementoDireito instanceof VariableReference)
 				condicaoFinal.setArgumentoDireita(elementoDireito.toSource());
 
@@ -232,18 +201,6 @@ public class EncontraDecisãoCompleta {
 			else if (elementoDireito instanceof Operator)
 				condicaoFinal.setArgumentoDireita(elementoDireito.toSource());
 
-//			else if (elementoDireito instanceof MethodReference)
-//				condicaoFinal.setArgumentoDireita(elementoDireito.toSource());
-//
-//			else if (elementoDireito instanceof ArrayReference)
-//				condicaoFinal.setArgumentoDireita(elementoDireito.toSource());
-//
-//			else if (elementoDireito instanceof MetaClassReference)
-//				condicaoFinal.setArgumentoDireita(elementoDireito.toSource());
-//
-//			else if (elementoDireito instanceof ThisReference)
-//				condicaoFinal.setArgumentoDireita(elementoDireito.toSource());
-
 			else {
 				System.err.println("Argumento da direita desconhecido.");
 				System.exit(0);
@@ -252,7 +209,6 @@ public class EncontraDecisãoCompleta {
 
 			decisao.setCondicao(condicaoFinal); 
 
-			//Andando até o irmão (Supondo Que os dois sejam parte de uma decisão)
 			while (arvore.getProgramElement() != null &&
 					arvore.getProgramElement().getASTParent().getID() != id_avo)
 				arvore.next();
