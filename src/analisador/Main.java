@@ -56,13 +56,8 @@ public class Main {
 	private static void analisadorSintatico(List<CompilationUnit> arvoreAbstrata) {
 		ConditionAnalyzer conditionAnalyzer = new ConditionAnalyzer();
 		List<Method> metodos = conditionAnalyzer.getTodosMetodos(arvoreAbstrata);
-		
-		//Aqui depois tenho que chamar os outros 2 metodos (allCOnditions e MCDC)
-//		ca.getTodasDecisoes(allMethods);
-		//Tenho que mudar esse metodo infinitamente primeiro.
-		
-//		conditionAnalyzer.getTodasCondicoes(metodos);
-//		conditionAnalyzer.getTodasDecisoes(metodos); 
+		conditionAnalyzer.getTodasCondicoes(metodos);
+		conditionAnalyzer.getTodasDecisoes(metodos); 
 		conditionAnalyzer.getTodasMCDC(metodos);
 		
 	}
