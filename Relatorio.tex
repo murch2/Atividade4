@@ -40,11 +40,11 @@ diversos critérios para a implementação dos requisitos de teste.
 javaDoc, foi um dos empecilhos para o melhor andamento do projeto, dado que perdemos muito tempo tentando adivinhar qual seria o nome da classe que apresentava a funcionalidade que desejavamos. 
 	
 	O tutorial disponibilizado pelo Alexandre foi de vital importância, pois depois de não conseguirmos desenvolver o projeto 
-com o codeCover já tinhamos tentado fazer o tutorial sugerido no site do recoder e não tinhamos conseguido terminalo. 
+com o codeCover já tinhamos tentado fazer o tutorial sugerido no site do recoder e não tinhamos conseguido termina-lo. 
 
 \section{Todas Decisões}
 \mbox{}
-	O critério de todas as decisões necessita que todas as decisões do programa sejam testadas em seus dois possíveis valores
+	O critério de todas as decisões faz com que todas as decisões do programa sejam testadas em seus dois possíveis valores
 (verdadeiro ou falso). Assim sendo, utilizamos a árvore de análise sintática gerada pelo recoder para pegar todos os métodos 
 de todas as classes presentes na pasta passada como parâmetro. 
 	
@@ -61,7 +61,7 @@ Decisão, uma fica com valor verdadeiro e outra com valor falso.
 \mbox{}
 
 	O critério de todas as condições faz exatamente o que o de todas as decisões faz com mais alguns passos. Dentre esses passos a mais um 
-possui uma grande diferença, a objeto instanciado que guarda as informações de uma decisão não é da classe Decisão.java e sim da classe 
+possui uma grande diferença, o objeto instanciado que guarda as informações de uma decisão não é da classe Decisão.java e sim da classe 
 DecisaoAux.java. A diferença principal entre as duas é que a DecisãoAux possui uma lista de condições, isso foi feito apenas para que o arquivo 
 XML gerado fosse mais claro. Nessa abordagem cada decisão possui uma lista de condições. Para cada condição devemos setar o valor como falso
 e na condição semelhante o valor verdadeiro. Assim cada decisão(DecisaoAux) possui 2n condições no arquivo xml (supondo uma decisão com n condições) dessas, n possuem valor falso e as outras n, com as mesmas informações das primeiras n, possuem valor verdadeiro. 
