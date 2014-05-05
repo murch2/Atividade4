@@ -16,7 +16,7 @@ import recoder.java.expression.operator.GreaterThan;
 import recoder.java.expression.operator.LessOrEquals;
 import recoder.java.expression.operator.LessThan;
 import recoder.java.expression.operator.LogicalAnd;
-import recoder.java.expression.operator.LogicalNot;
+//import recoder.java.expression.operator.LogicalNot;
 import recoder.java.expression.operator.LogicalOr;
 import recoder.java.expression.operator.NotEquals;
 import recoder.java.reference.VariableReference;
@@ -26,6 +26,9 @@ public class EncontraDecisãoCompleta {
 	public static void encontraDesicaoCompletaR(TreeWalker arvore, Decisao decisao) {
 		
 		decisao.setCodigo(arvore.getProgramElement().toSource());
+		
+		while (arvore.getProgramElement() instanceof ParenthesizedExpression)
+			arvore.next(); 
 		
 		if ((arvore.getProgramElement() instanceof VariableReference) ||
 			(arvore.getProgramElement() instanceof BooleanLiteral) ||
@@ -87,30 +90,28 @@ public class EncontraDecisãoCompleta {
 					arvore.getProgramElement().getASTParent().getID() != id_avo)
 				arvore.next();
 		}
-
-		else if (arvore.getProgramElement() instanceof LogicalNot) {
-
-			Decisao d = new Decisao();
-
-			decisao.setOperador("NOT");
-			decisao.setDecisaoEsquerda(d);
-
-			while (arvore.getProgramElement() instanceof LogicalNot)
-				arvore.next();
-
-			if (arvore.getProgramElement() instanceof ParenthesizedExpression) {
-				arvore.next();
-				EncontraDecisãoCompleta.encontraDesicaoCompletaR(arvore, d);
-			}
-
-			else if (arvore.getProgramElement() instanceof VariableReference)
-				EncontraDecisãoCompleta.encontraDesicaoCompletaR(arvore, d);
-
-			else {
-				System.err.println("Argumento filho do operador lógico de negação desconhecido.");
-				System.exit(0);
-			}
-		}
+		//LOGICAL NOT Não funcionando. 
+//		else if (arvore.getProgramElement() instanceof LogicalNot) {
+//			Decisao d = new Decisao();
+//
+//			decisao.setOperador("NOT");
+//			decisao.setDecisaoEsquerda(d);
+//			
+//			arvore.next();
+//
+//			if (arvore.getProgramElement() instanceof ParenthesizedExpression) {
+//				arvore.next();
+//				EncontraDecisãoCompleta.encontraDesicaoCompletaR(arvore, decisao);
+//			}
+//
+//			else if (arvore.getProgramElement() instanceof VariableReference)
+//				EncontraDecisãoCompleta.encontraDesicaoCompletaR(arvore, decisao);
+//
+//			else {
+//				System.err.println("\nArgumento filho do operador lógico de negação desconhecido.");
+//				System.exit(0);
+//			}
+//		}
 
 		else {
 			System.out.println(arvore.getProgramElement().toSource()); 
@@ -151,20 +152,21 @@ public class EncontraDecisãoCompleta {
 		}
 		
 		else if (arvore.getProgramElement() instanceof ComparativeOperator) {
-
 			Condicao condicaoFinal = new Condicao();
 		
 			condicaoFinal.setCodigo(arvore.getProgramElement().toSource());
 			
 			EncontraDecisãoCompleta.achaOperando(arvore, condicaoFinal);
 
+			//Essa merda aqui deve estar errada
 			int id_avo = arvore.getProgramElement().getASTParent().getID();
 			int id_pai = arvore.getProgramElement().getID();
 
 			arvore.next();
 			arvore.next(); 
 
-			if (arvore.getProgramElement() instanceof ParenthesizedExpression)
+			//Era if 
+			while (arvore.getProgramElement() instanceof ParenthesizedExpression)
 				arvore.next();
 
 			ProgramElement elementoEsquerdo = arvore.getProgramElement();
@@ -177,7 +179,6 @@ public class EncontraDecisãoCompleta {
 			
 			ProgramElement elementoDireito = arvore.getProgramElement();
 
-			// assign the lhs of the condition
 			if (elementoEsquerdo instanceof Identifier || elementoEsquerdo instanceof VariableReference)
 				condicaoFinal.setArgumentoEsquerda(elementoEsquerdo.toSource());
 
@@ -205,7 +206,6 @@ public class EncontraDecisãoCompleta {
 				System.err.println("Argumento da direita desconhecido.");
 				System.exit(0);
 			}
-
 
 			decisao.setCondicao(condicaoFinal); 
 

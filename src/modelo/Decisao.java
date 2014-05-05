@@ -8,7 +8,7 @@ public class Decisao {
 	
 	private String codigo;
 	private Boolean valor;
-	private Condicao condicao;
+	private Condicao condicao; 
 
 	public Decisao getDecisaoEsquerda() {
 		return decisaoEsquerda;

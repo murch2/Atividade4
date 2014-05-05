@@ -24,7 +24,6 @@ import suporte.XML;
 
 public class ConditionAnalyzer  {
 	
-	//Apenas um contador global para o metodo valorEsperado
 	private static int indexGlobal = 0; 
 		
 	private List<Decisao> getRequisitiosMCDC(List<Decisao> decisoes) {
@@ -141,7 +140,7 @@ public class ConditionAnalyzer  {
 	}
 	 
 	public String setValorCondicoes(Decisao decisao, String teste){
-
+		
 		if (decisao.getCondicao() != null) {
 			Condicao condicao = decisao.getCondicao();
 	

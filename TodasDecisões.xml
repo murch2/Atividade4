@@ -4,208 +4,10 @@
       <nomeClasse>ExemploDeClasseDois</nomeClasse>
       <metodos class="vector">
         <modelo.Metodo>
-          <metodo>ExemploDeClasseDois.funcao</metodo>
-          <decisoes class="vector">
-            <Decisao>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>AND</operador>
-                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>false</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
-              <valor>false</valor>
-            </Decisao>
-            <Decisao>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>AND</operador>
-                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>false</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
-              <valor>true</valor>
-            </Decisao>
-          </decisoes>
-        </modelo.Metodo>
-        <modelo.Metodo>
           <metodo>ExemploDeClasseDois.metodoDeTeste</metodo>
           <decisoes class="vector">
             <Decisao>
               <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>false</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 0</codigo>
-              <valor>false</valor>
-            </Decisao>
-            <Decisao>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>false</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 0</codigo>
-              <valor>true</valor>
-            </Decisao>
-          </decisoes>
-        </modelo.Metodo>
-      </metodos>
-    </modelo.Classe>
-    <modelo.Classe>
-      <nomeClasse>ExemploDeClasseUm</nomeClasse>
-      <metodos class="vector">
-        <modelo.Metodo>
-          <metodo>ExemploDeClasseUm.Metodo1</metodo>
-          <decisoes class="vector">
-            <Decisao>
-              <codigo>a &gt; 0</codigo>
-              <valor>false</valor>
-              <condicao>
-                <argumentoEsquerda>a</argumentoEsquerda>
-                <argumentoDireita> 0</argumentoDireita>
-                <operador>MAIOR</operador>
-                <codigo>a &gt; 0</codigo>
-                <valor>false</valor>
-              </condicao>
-            </Decisao>
-            <Decisao>
-              <codigo>a &gt; 0</codigo>
-              <valor>true</valor>
-              <condicao>
-                <argumentoEsquerda>a</argumentoEsquerda>
-                <argumentoDireita> 0</argumentoDireita>
-                <operador>MAIOR</operador>
-                <codigo>a &gt; 0</codigo>
-                <valor>false</valor>
-              </condicao>
-            </Decisao>
-          </decisoes>
-        </modelo.Metodo>
-        <modelo.Metodo>
-          <metodo>ExemploDeClasseUm.Metodo2</metodo>
-          <decisoes class="vector">
-            <Decisao>
-              <decisaoEsquerda>
                 <codigo>a &gt; 0</codigo>
                 <condicao>
                   <argumentoEsquerda>a</argumentoEsquerda>
@@ -216,17 +18,17 @@
                 </condicao>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> b == 0</codigo>
+                <codigo> c != 1</codigo>
                 <condicao>
-                  <argumentoEsquerda> b</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> b == 0</codigo>
+                  <argumentoEsquerda> c</argumentoEsquerda>
+                  <argumentoDireita> 1</argumentoDireita>
+                  <operador>DESIGUALDADE</operador>
+                  <codigo> c != 1</codigo>
                   <valor>false</valor>
                 </condicao>
               </decisaoDireita>
               <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              <codigo>a &gt; 0 &amp;&amp; c != 1</codigo>
               <valor>false</valor>
             </Decisao>
             <Decisao>
@@ -241,17 +43,17 @@
                 </condicao>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> b == 0</codigo>
+                <codigo> c != 1</codigo>
                 <condicao>
-                  <argumentoEsquerda> b</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> b == 0</codigo>
+                  <argumentoEsquerda> c</argumentoEsquerda>
+                  <argumentoDireita> 1</argumentoDireita>
+                  <operador>DESIGUALDADE</operador>
+                  <codigo> c != 1</codigo>
                   <valor>false</valor>
                 </condicao>
               </decisaoDireita>
               <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              <codigo>a &gt; 0 &amp;&amp; c != 1</codigo>
               <valor>true</valor>
             </Decisao>
           </decisoes>
