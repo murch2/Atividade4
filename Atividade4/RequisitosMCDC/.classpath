@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/home/antonio.miranda/git/Atividade4/Atividade4/lib/asm-all-3.3.jar"/>
+	<classpathentry kind="lib" path="/home/antonio.miranda/git/Atividade4/Atividade4/lib/backport-util-concurrent-3.1.jar"/>
+	<classpathentry kind="lib" path="/home/antonio.miranda/git/Atividade4/Atividade4/lib/bsh-1.2b2.jar"/>
+	<classpathentry kind="lib" path="/home/antonio.miranda/git/Atividade4/Atividade4/lib/junit.jar"/>
+	<classpathentry kind="lib" path="/home/antonio.miranda/git/Atividade4/Atividade4/lib/recoder.jar"/>
+	<classpathentry kind="lib" path="/home/antonio.miranda/git/Atividade4/Atividade4/lib/retrotranslator_mod_for_recoder.jar"/>
+	<classpathentry kind="lib" path="/home/antonio.miranda/git/Atividade4/Atividade4/lib/retrotranslator_mod_src.zip"/>
+	<classpathentry kind="lib" path="/home/antonio.miranda/git/Atividade4/Atividade4/lib/retrotranslator-runtime-1.2.7-transformed.jar"/>
+	<classpathentry kind="lib" path="/home/antonio.miranda/git/Atividade4/Atividade4/lib/xstream-1.3.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
