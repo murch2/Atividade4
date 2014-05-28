@@ -1,10 +1,337 @@
 <modelo.TodasMCDC>
   <classes class="vector">
     <modelo.Classe>
-      <nomeClasse>ExemploDeClasseTres</nomeClasse>
+      <nomeClasse>analisar.ExemploDeClasseDois</nomeClasse>
       <metodos class="vector">
         <modelo.Metodo>
-          <metodo>ExemploDeClasseTres.funcao</metodo>
+          <metodo>analisar.ExemploDeClasseDois.funcao</metodo>
+          <decisoes class="vector">
+            <decision>
+              <decisaoEsquerda>
+                <decisaoEsquerda>
+                  <codigo>a &gt; 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda>a</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>MAIOR</operador>
+                    <codigo>a &gt; 0</codigo>
+                    <valor>true</valor>
+                  </condicao>
+                </decisaoEsquerda>
+                <decisaoDireita>
+                  <codigo> b == 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda> b</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>IGUALDADE</operador>
+                    <codigo> b == 0</codigo>
+                    <valor>true</valor>
+                  </condicao>
+                </decisaoDireita>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> c == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> c</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> c == 0</codigo>
+                  <valor>true</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
+              <valor>true</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <decisaoEsquerda>
+                  <codigo>a &gt; 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda>a</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>MAIOR</operador>
+                    <codigo>a &gt; 0</codigo>
+                    <valor>false</valor>
+                  </condicao>
+                </decisaoEsquerda>
+                <decisaoDireita>
+                  <codigo> b == 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda> b</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>IGUALDADE</operador>
+                    <codigo> b == 0</codigo>
+                    <valor>true</valor>
+                  </condicao>
+                </decisaoDireita>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> c == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> c</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> c == 0</codigo>
+                  <valor>true</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
+              <valor>false</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <decisaoEsquerda>
+                  <codigo>a &gt; 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda>a</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>MAIOR</operador>
+                    <codigo>a &gt; 0</codigo>
+                    <valor>true</valor>
+                  </condicao>
+                </decisaoEsquerda>
+                <decisaoDireita>
+                  <codigo> b == 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda> b</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>IGUALDADE</operador>
+                    <codigo> b == 0</codigo>
+                    <valor>false</valor>
+                  </condicao>
+                </decisaoDireita>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> c == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> c</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> c == 0</codigo>
+                  <valor>true</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
+              <valor>false</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <decisaoEsquerda>
+                  <codigo>a &gt; 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda>a</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>MAIOR</operador>
+                    <codigo>a &gt; 0</codigo>
+                    <valor>true</valor>
+                  </condicao>
+                </decisaoEsquerda>
+                <decisaoDireita>
+                  <codigo> b == 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda> b</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>IGUALDADE</operador>
+                    <codigo> b == 0</codigo>
+                    <valor>true</valor>
+                  </condicao>
+                </decisaoDireita>
+                <operador>AND</operador>
+                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> c == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> c</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> c == 0</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>AND</operador>
+              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
+              <valor>false</valor>
+            </decision>
+          </decisoes>
+        </modelo.Metodo>
+        <modelo.Metodo>
+          <metodo>analisar.ExemploDeClasseDois.metodoQualquer</metodo>
+          <decisoes class="vector">
+            <decision>
+              <decisaoEsquerda>
+                <decisaoEsquerda>
+                  <codigo>a &gt; 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda>a</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>MAIOR</operador>
+                    <codigo>a &gt; 0</codigo>
+                    <valor>true</valor>
+                  </condicao>
+                </decisaoEsquerda>
+                <decisaoDireita>
+                  <codigo> b == 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda> b</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>IGUALDADE</operador>
+                    <codigo> b == 0</codigo>
+                    <valor>false</valor>
+                  </condicao>
+                </decisaoDireita>
+                <operador>OR</operador>
+                <codigo>a &gt; 0 || b == 0</codigo>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> c == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> c</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> c == 0</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>OR</operador>
+              <codigo>a &gt; 0 || b == 0 || c == 0</codigo>
+              <valor>true</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <decisaoEsquerda>
+                  <codigo>a &gt; 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda>a</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>MAIOR</operador>
+                    <codigo>a &gt; 0</codigo>
+                    <valor>false</valor>
+                  </condicao>
+                </decisaoEsquerda>
+                <decisaoDireita>
+                  <codigo> b == 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda> b</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>IGUALDADE</operador>
+                    <codigo> b == 0</codigo>
+                    <valor>false</valor>
+                  </condicao>
+                </decisaoDireita>
+                <operador>OR</operador>
+                <codigo>a &gt; 0 || b == 0</codigo>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> c == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> c</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> c == 0</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>OR</operador>
+              <codigo>a &gt; 0 || b == 0 || c == 0</codigo>
+              <valor>false</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <decisaoEsquerda>
+                  <codigo>a &gt; 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda>a</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>MAIOR</operador>
+                    <codigo>a &gt; 0</codigo>
+                    <valor>false</valor>
+                  </condicao>
+                </decisaoEsquerda>
+                <decisaoDireita>
+                  <codigo> b == 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda> b</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>IGUALDADE</operador>
+                    <codigo> b == 0</codigo>
+                    <valor>true</valor>
+                  </condicao>
+                </decisaoDireita>
+                <operador>OR</operador>
+                <codigo>a &gt; 0 || b == 0</codigo>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> c == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> c</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> c == 0</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>OR</operador>
+              <codigo>a &gt; 0 || b == 0 || c == 0</codigo>
+              <valor>true</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <decisaoEsquerda>
+                  <codigo>a &gt; 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda>a</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>MAIOR</operador>
+                    <codigo>a &gt; 0</codigo>
+                    <valor>false</valor>
+                  </condicao>
+                </decisaoEsquerda>
+                <decisaoDireita>
+                  <codigo> b == 0</codigo>
+                  <condicao>
+                    <argumentoEsquerda> b</argumentoEsquerda>
+                    <argumentoDireita> 0</argumentoDireita>
+                    <operador>IGUALDADE</operador>
+                    <codigo> b == 0</codigo>
+                    <valor>false</valor>
+                  </condicao>
+                </decisaoDireita>
+                <operador>OR</operador>
+                <codigo>a &gt; 0 || b == 0</codigo>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> c == 0</codigo>
+                <condicao>
+                  <argumentoEsquerda> c</argumentoEsquerda>
+                  <argumentoDireita> 0</argumentoDireita>
+                  <operador>IGUALDADE</operador>
+                  <codigo> c == 0</codigo>
+                  <valor>true</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>OR</operador>
+              <codigo>a &gt; 0 || b == 0 || c == 0</codigo>
+              <valor>true</valor>
+            </decision>
+          </decisoes>
+        </modelo.Metodo>
+      </metodos>
+    </modelo.Classe>
+    <modelo.Classe>
+      <nomeClasse>analisar.ExemploDeClasseTres</nomeClasse>
+      <metodos class="vector">
+        <modelo.Metodo>
+          <metodo>analisar.ExemploDeClasseTres.funcao</metodo>
           <decisoes class="vector">
             <decision>
               <decisaoEsquerda>
@@ -274,7 +601,7 @@
           </decisoes>
         </modelo.Metodo>
         <modelo.Metodo>
-          <metodo>ExemploDeClasseTres.metodoDeTeste</metodo>
+          <metodo>analisar.ExemploDeClasseTres.metodoDeTeste</metodo>
           <decisoes class="vector">
             <decision>
               <codigo>a</codigo>
@@ -299,364 +626,10 @@
       </metodos>
     </modelo.Classe>
     <modelo.Classe>
-      <nomeClasse>ExemploDeClasseDois</nomeClasse>
+      <nomeClasse>analisar.ExemploDeClasseUm</nomeClasse>
       <metodos class="vector">
         <modelo.Metodo>
-          <metodo>ExemploDeClasseDois.funcao</metodo>
-          <decisoes class="vector">
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>true</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>true</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>AND</operador>
-                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>true</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
-              <valor>true</valor>
-            </decision>
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>true</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>AND</operador>
-                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>true</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
-              <valor>false</valor>
-            </decision>
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>true</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>AND</operador>
-                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>true</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
-              <valor>false</valor>
-            </decision>
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>true</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>true</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>AND</operador>
-                <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>false</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0 &amp;&amp; c == 0</codigo>
-              <valor>false</valor>
-            </decision>
-          </decisoes>
-        </modelo.Metodo>
-        <modelo.Metodo>
-          <metodo>ExemploDeClasseDois.metodoDeTeste</metodo>
-          <decisoes class="vector">
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>true</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>false</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 0</codigo>
-              <valor>true</valor>
-            </decision>
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>false</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 0</codigo>
-              <valor>false</valor>
-            </decision>
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>true</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>false</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 0</codigo>
-              <valor>true</valor>
-            </decision>
-            <decision>
-              <decisaoEsquerda>
-                <decisaoEsquerda>
-                  <codigo>a &gt; 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda>a</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>MAIOR</operador>
-                    <codigo>a &gt; 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoEsquerda>
-                <decisaoDireita>
-                  <codigo> b == 0</codigo>
-                  <condicao>
-                    <argumentoEsquerda> b</argumentoEsquerda>
-                    <argumentoDireita> 0</argumentoDireita>
-                    <operador>IGUALDADE</operador>
-                    <codigo> b == 0</codigo>
-                    <valor>false</valor>
-                  </condicao>
-                </decisaoDireita>
-                <operador>OR</operador>
-                <codigo>a &gt; 0 || b == 0</codigo>
-              </decisaoEsquerda>
-              <decisaoDireita>
-                <codigo> c == 0</codigo>
-                <condicao>
-                  <argumentoEsquerda> c</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> c == 0</codigo>
-                  <valor>true</valor>
-                </condicao>
-              </decisaoDireita>
-              <operador>OR</operador>
-              <codigo>a &gt; 0 || b == 0 || c == 0</codigo>
-              <valor>true</valor>
-            </decision>
-          </decisoes>
-        </modelo.Metodo>
-      </metodos>
-    </modelo.Classe>
-    <modelo.Classe>
-      <nomeClasse>ExemploDeClasseUm</nomeClasse>
-      <metodos class="vector">
-        <modelo.Metodo>
-          <metodo>ExemploDeClasseUm.Metodo1</metodo>
-          <decisoes class="vector">
-            <decision>
-              <codigo>a &gt; 0</codigo>
-              <valor>true</valor>
-              <condicao>
-                <argumentoEsquerda>a</argumentoEsquerda>
-                <argumentoDireita> 0</argumentoDireita>
-                <operador>MAIOR</operador>
-                <codigo>a &gt; 0</codigo>
-                <valor>true</valor>
-              </condicao>
-            </decision>
-            <decision>
-              <codigo>a &gt; 0</codigo>
-              <valor>false</valor>
-              <condicao>
-                <argumentoEsquerda>a</argumentoEsquerda>
-                <argumentoDireita> 0</argumentoDireita>
-                <operador>MAIOR</operador>
-                <codigo>a &gt; 0</codigo>
-                <valor>false</valor>
-              </condicao>
-            </decision>
-          </decisoes>
-        </modelo.Metodo>
-        <modelo.Metodo>
-          <metodo>ExemploDeClasseUm.Metodo2</metodo>
+          <metodo>analisar.ExemploDeClasseUm.Metodo1</metodo>
           <decisoes class="vector">
             <decision>
               <decisaoEsquerda>
@@ -670,17 +643,17 @@
                 </condicao>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> b == 0</codigo>
+                <codigo> b &lt; 5</codigo>
                 <condicao>
                   <argumentoEsquerda> b</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> b == 0</codigo>
+                  <argumentoDireita> 5</argumentoDireita>
+                  <operador>MENOR</operador>
+                  <codigo> b &lt; 5</codigo>
                   <valor>true</valor>
                 </condicao>
               </decisaoDireita>
               <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              <codigo>a &gt; 0 &amp;&amp; b &lt; 5</codigo>
               <valor>true</valor>
             </decision>
             <decision>
@@ -695,17 +668,17 @@
                 </condicao>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> b == 0</codigo>
+                <codigo> b &lt; 5</codigo>
                 <condicao>
                   <argumentoEsquerda> b</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> b == 0</codigo>
+                  <argumentoDireita> 5</argumentoDireita>
+                  <operador>MENOR</operador>
+                  <codigo> b &lt; 5</codigo>
                   <valor>true</valor>
                 </condicao>
               </decisaoDireita>
               <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              <codigo>a &gt; 0 &amp;&amp; b &lt; 5</codigo>
               <valor>false</valor>
             </decision>
             <decision>
@@ -720,18 +693,98 @@
                 </condicao>
               </decisaoEsquerda>
               <decisaoDireita>
-                <codigo> b == 0</codigo>
+                <codigo> b &lt; 5</codigo>
                 <condicao>
                   <argumentoEsquerda> b</argumentoEsquerda>
-                  <argumentoDireita> 0</argumentoDireita>
-                  <operador>IGUALDADE</operador>
-                  <codigo> b == 0</codigo>
+                  <argumentoDireita> 5</argumentoDireita>
+                  <operador>MENOR</operador>
+                  <codigo> b &lt; 5</codigo>
                   <valor>false</valor>
                 </condicao>
               </decisaoDireita>
               <operador>AND</operador>
-              <codigo>a &gt; 0 &amp;&amp; b == 0</codigo>
+              <codigo>a &gt; 0 &amp;&amp; b &lt; 5</codigo>
               <valor>false</valor>
+            </decision>
+          </decisoes>
+        </modelo.Metodo>
+        <modelo.Metodo>
+          <metodo>analisar.ExemploDeClasseUm.Metodo2</metodo>
+          <decisoes class="vector">
+            <decision>
+              <decisaoEsquerda>
+                <codigo>a &gt; b</codigo>
+                <condicao>
+                  <argumentoEsquerda>a</argumentoEsquerda>
+                  <argumentoDireita> b</argumentoDireita>
+                  <operador>MAIOR</operador>
+                  <codigo>a &gt; b</codigo>
+                  <valor>true</valor>
+                </condicao>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> b &gt; 3</codigo>
+                <condicao>
+                  <argumentoEsquerda> b</argumentoEsquerda>
+                  <argumentoDireita> 3</argumentoDireita>
+                  <operador>MAIOR</operador>
+                  <codigo> b &gt; 3</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>OR</operador>
+              <codigo>a &gt; b || b &gt; 3</codigo>
+              <valor>true</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <codigo>a &gt; b</codigo>
+                <condicao>
+                  <argumentoEsquerda>a</argumentoEsquerda>
+                  <argumentoDireita> b</argumentoDireita>
+                  <operador>MAIOR</operador>
+                  <codigo>a &gt; b</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> b &gt; 3</codigo>
+                <condicao>
+                  <argumentoEsquerda> b</argumentoEsquerda>
+                  <argumentoDireita> 3</argumentoDireita>
+                  <operador>MAIOR</operador>
+                  <codigo> b &gt; 3</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>OR</operador>
+              <codigo>a &gt; b || b &gt; 3</codigo>
+              <valor>false</valor>
+            </decision>
+            <decision>
+              <decisaoEsquerda>
+                <codigo>a &gt; b</codigo>
+                <condicao>
+                  <argumentoEsquerda>a</argumentoEsquerda>
+                  <argumentoDireita> b</argumentoDireita>
+                  <operador>MAIOR</operador>
+                  <codigo>a &gt; b</codigo>
+                  <valor>false</valor>
+                </condicao>
+              </decisaoEsquerda>
+              <decisaoDireita>
+                <codigo> b &gt; 3</codigo>
+                <condicao>
+                  <argumentoEsquerda> b</argumentoEsquerda>
+                  <argumentoDireita> 3</argumentoDireita>
+                  <operador>MAIOR</operador>
+                  <codigo> b &gt; 3</codigo>
+                  <valor>true</valor>
+                </condicao>
+              </decisaoDireita>
+              <operador>OR</operador>
+              <codigo>a &gt; b || b &gt; 3</codigo>
+              <valor>true</valor>
             </decision>
           </decisoes>
         </modelo.Metodo>

@@ -42,6 +42,8 @@ public class XML {
 				xstream.alias("Decisao", Decisao.class);
 				break;
 
+			//Tá errado essa merda aqui	
+				
 			case MCDC:
 				fileName = "MCDC.xml"; 
 				xstream.alias("allMCDCDecisions", TodasDecisoes.class);
